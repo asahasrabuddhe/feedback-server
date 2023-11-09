@@ -1,0 +1,12 @@
+# Docker volumes
+docker-compose/gitlab-server/gitlab/
+docker-compose/gitlab-server/gitlab-runner/
+
+# Cloudflare credentials
+config/cloudflared/cert.pem
+
+# MacOS specific files
+.DS_Store
+
+# Logs
+*.log 
