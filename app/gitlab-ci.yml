@@ -1,0 +1,28 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  DEPLOY_DIR: /var/www/html
+
+build:
+  stage: build
+  image: alpine:latest
+  script:
+    - echo "Building application..."
+    - mkdir -p public
+    - cp -r app/* public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 hour
+
+deploy:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - echo "Deploying application..."
+    - mkdir -p $DEPLOY_DIR
+    - cp -r public/* $DEPLOY_DIR/
+  only:
+    - main 
