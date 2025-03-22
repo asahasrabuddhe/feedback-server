@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Self-Hosted GitLab CI/CD Demo</h1>
+    <div class="success">
+        <p>✅ Successfully deployed through local GitLab CI/CD pipeline!</p>
+        <p>Deployment timestamp: <span id="timestamp"></span></p>
+    </div>
+    <h2>System Overview</h2>
+    <ul>
+        <li>Local GitLab Server: Running in Docker</li>
+        <li>CI/CD Pipeline: Automated deployment through GitLab Runner</li>
+        <li>Public Access: Secured through Cloudflare Tunnel</li>
+    </ul>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html> 
