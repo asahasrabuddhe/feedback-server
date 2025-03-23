@@ -29,4 +29,4 @@ docker exec -it gitlab-runner gitlab-runner register \
   --docker-privileged="true" \
   --docker-network-mode="gitlab-network"
 
-echo "GitLab Runner registered successfully!" 
+echo "GitLab Runner registered successfully!"
