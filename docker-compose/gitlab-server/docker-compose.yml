@@ -3,6 +3,7 @@ version: '3.6'
 services:
   gitlab:
     image: 'gitlab/gitlab-ce:latest'
+    platform: linux/amd64
     container_name: gitlab
     restart: always
     hostname: 'gitlab.local'
@@ -11,7 +12,7 @@ services:
         external_url 'http://gitlab.local'
         gitlab_rails['gitlab_shell_ssh_port'] = 2222
     ports:
-      - '8080:80'
+      - '8090:80'
       - '2222:22'
     volumes:
       - './gitlab/config:/etc/gitlab'
@@ -23,6 +24,7 @@ services:
 
   gitlab-runner:
     image: 'gitlab/gitlab-runner:latest'
+    platform: linux/amd64
     container_name: gitlab-runner
     restart: always
     depends_on:
