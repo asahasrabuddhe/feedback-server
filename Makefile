@@ -3,7 +3,7 @@
 # Start GitLab server and runner
 start-gitlab:
 	@echo "Starting GitLab server and runner..."
-	cd docker-compose/gitlab-server && docker-compose up -d
+	cd docker-compose/gitlab-server && docker compose up -d
 	@echo "GitLab will be available at http://localhost:8080"
 	@echo "Default username: root"
 	@echo "Default password: Check initial root password with: docker exec -it gitlab grep 'Password:' /etc/gitlab/initial_root_password"
@@ -11,7 +11,7 @@ start-gitlab:
 # Stop GitLab server and runner
 stop-gitlab:
 	@echo "Stopping GitLab server and runner..."
-	cd docker-compose/gitlab-server && docker-compose down
+	cd docker-compose/gitlab-server && docker compose down
 
 # Start Cloudflare Tunnel
 start-tunnel:
